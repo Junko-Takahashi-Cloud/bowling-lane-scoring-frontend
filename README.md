@@ -1,16 +1,40 @@
-# React + Vite
+# ボウリングレーン スコアリング分析システム(フロントエンド)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+スポーツボウリング場運営システム構想 第五弾のフロントエンドです。React(Vite)で構築しています。
 
-Currently, two official plugins are available:
+## 概要
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+第五弾のバックエンド([bowling-lane-scoring-system](https://github.com/Junko-Takahashi-Cloud/bowling-lane-scoring-system))が提供するAPIと接続し、投球データの分析結果を画面として表示・操作するためのアプリケーションです。
 
-## React Compiler
+## 画面構成
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **会員向けダッシュボード**: 会員本人がログイン(会員コード/電話番号+PIN)し、自分の成績(総ゲーム数・平均スコア・投球傾向・フレーム内訳・ギア別成績・直近のゲーム)を確認できる画面
+- **スタッフ向けダッシュボード**: センター全体のサマリー・レーン別成績・コンディション(オイルパターン)別成績を確認できる画面
 
-## Expanding the ESLint configuration
+## 技術スタック
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React 19 (Vite)
+- axios(API通信)
+- Recharts(グラフ描画)
+
+## セットアップ
+
+```bash
+npm install
+```
+
+`.env.example`を`.env`にコピーし、必要なトークンを設定してください。
+
+```bash
+cp .env.example .env
+```
+
+```bash
+npm run dev
+```
+
+`http://localhost:5173` で起動します。バックエンド(`bowling-lane-scoring-system`)を別途起動しておく必要があります。
+
+## 関連リポジトリ
+
+- [bowling-lane-scoring-system](https://github.com/Junko-Takahashi-Cloud/bowling-lane-scoring-system)(バックエンド)
